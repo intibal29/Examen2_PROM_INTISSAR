@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ExamenProm2</string>
+    <string name="identificate">IDENTIFICATE</string>
+    <string name="soy_alumno">Soy Alumno</string>
+    <string name="soy_profesor">Soy Profesor</string>
 </resources>
