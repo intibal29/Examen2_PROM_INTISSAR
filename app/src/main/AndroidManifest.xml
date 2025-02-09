@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permite solo conexiones seguras HTTPS -->
+    <uses-feature android:name="android.hardware.touchscreen" android:required="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,15 +15,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExamenProm2"
+        android:usesCleartextTraffic="false"
         tools:targetApi="31">
+
+        <!-- Configuración de idiomas -->
+        <meta-data
+            android:name="android.support.locale"
+            android:resource="@xml/locales_config" />
+
+        <!-- Actividad Principal -->
         <activity
-            android:name=".MainActivity"
+            android:name=".interfaz.PrincipalActividad"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ExamenProm2">
+            android:theme="@style/Theme.ExamenProm2"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

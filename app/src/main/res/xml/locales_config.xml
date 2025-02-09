@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locales xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Idiomas permitidos -->
+    <locale android:name="es" /> <!-- Español -->
+    <locale android:name="en" /> <!-- Inglés -->
+</locales>

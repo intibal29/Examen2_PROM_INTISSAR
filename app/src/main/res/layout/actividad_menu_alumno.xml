@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".interfaz.MenuAlumnoActividad">
+    tools:context=".interfaz.alumno.MenuAlumnoActividad">
 
     <!-- Botón de Ayuda -->
     <ImageButton
@@ -29,6 +29,17 @@
         app:layout_constraintEnd_toStartOf="@id/btnAyuda"
         android:contentDescription="@string/boton_para_cambiar_idioma"
         android:layout_marginEnd="10dp" />
+
+    <!-- Botón de Configuración -->
+    <ImageButton
+        android:id="@+id/btnConfiguracion"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_preferences"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="configuracion" />
 
     <!-- Nombre del Alumno -->
     <TextView
@@ -85,5 +96,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="30dp" />
+
+    <!-- Botón para Cerrar Sesión -->
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesión"
+        android:textSize="16sp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnPuntuacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".interfaz.PuntuacionActividad">
+    tools:context=".interfaz.puntuacion.PuntuacionActividad">
 
     <!-- Botón de Ayuda -->
     <ImageButton
@@ -69,5 +69,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="20dp" />
+    <TextView
+        android:id="@+id/tvRanking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🏆 Ranking TOP 3 🏆"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

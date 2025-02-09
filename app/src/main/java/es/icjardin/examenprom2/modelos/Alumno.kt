@@ -5,5 +5,5 @@ data class Alumno(
     val nombre: String,
     val usuario: String,
     val contrasena: String,
-    val idGrupo: Int? = null  // Puede ser nulo si el alumno no está asignado a un grupo
+    val idGrupo: Int
 )
