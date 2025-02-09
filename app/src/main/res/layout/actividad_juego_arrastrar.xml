@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".interfaz.JuegoArrastrarActividad">
+
+    <!-- Botón de Ayuda -->
+    <ImageButton
+        android:id="@+id/btnAyuda"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_help"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/boton_de_ayuda" />
+
+    <!-- Botón de Cambio de Lenguaje -->
+    <ImageButton
+        android:id="@+id/btnIdioma"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_manage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAyuda"
+        android:contentDescription="@string/boton_para_cambiar_idioma"
+        android:layout_marginEnd="10dp" />
+
+    <!-- Título del Juego -->
+    <TextView
+        android:id="@+id/tvTituloJuego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/juego_arrastra_la_imagen_correcta"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/btnAyuda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Contenedor de Imágenes -->
+    <LinearLayout
+        android:id="@+id/contenedorImagenes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloJuego"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imagen1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/imagen1"
+            android:contentDescription="Imagen 1"
+            android:layout_margin="10dp" />
+
+        <ImageView
+            android:id="@+id/imagen2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/imagen2"
+            android:contentDescription="Imagen 2"
+            android:layout_margin="10dp" />
+
+        <ImageView
+            android:id="@+id/imagen3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/imagen3"
+            android:contentDescription="Imagen 3"
+            android:layout_margin="10dp" />
+
+        <ImageView
+            android:id="@+id/imagen4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/imagen4"
+            android:contentDescription="Imagen 4"
+            android:layout_margin="10dp" />
+    </LinearLayout>
+
+    <!-- Contenedor de Textos -->
+    <LinearLayout
+        android:id="@+id/contenedorTextos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/contenedorImagenes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/texto1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El sol brilla en el cielo"
+            android:textSize="18sp"
+            android:background="@android:color/darker_gray"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/texto2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El agua es esencial para la vida"
+            android:textSize="18sp"
+            android:background="@android:color/darker_gray"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/texto3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Los árboles nos dan oxígeno"
+            android:textSize="18sp"
+            android:background="@android:color/darker_gray"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/texto4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="La luna ilumina la noche"
+            android:textSize="18sp"
+            android:background="@android:color/darker_gray"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
+    <!-- Botón para Verificar Respuestas -->
+    <Button
+        android:id="@+id/btnVerificar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/verificar_respuestas"
+        android:textSize="18sp"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/contenedorTextos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
+
+    <!-- Botón para Volver -->
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/volver"
+        android:textSize="16sp"
+        android:backgroundTint="@color/teal_700"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnVerificar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

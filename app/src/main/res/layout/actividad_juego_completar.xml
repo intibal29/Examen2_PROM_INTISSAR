@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".interfaz.JuegoCompletarActividad">
+
+    <!-- Botón de Ayuda -->
+    <ImageButton
+        android:id="@+id/btnAyuda"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_help"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/boton_de_ayuda" />
+
+    <!-- Botón de Cambio de Lenguaje -->
+    <ImageButton
+        android:id="@+id/btnIdioma"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_manage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAyuda"
+        android:contentDescription="@string/boton_para_cambiar_idioma"
+        android:layout_marginEnd="10dp" />
+
+    <!-- Título del Juego -->
+
+    <!-- Botón para Reproducir la Canción -->
+    <TextView
+        android:id="@+id/tvTituloJuego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/juego_completa_la_canci_n"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAyuda" />
+
+    <Button
+        android:id="@+id/btnReproducirCancion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/escuchar_canci_n"
+        android:textSize="18sp"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloJuego"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Letra de la Canción con Huecos -->
+
+    <!-- Campos de Texto para Completar la Canción -->
+    <TextView
+        android:id="@+id/tvLetraCancion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:text="En el cielo veo el _____ (1) brillar, \n
+                     Las olas del mar vienen y van sin _____ (2), \n
+                     El viento susurra un dulce _____ (3), \n
+                     Y la luna baila con su luz de _____ (4)."
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnReproducirCancion" />
+
+    <EditText
+        android:id="@+id/etRespuesta1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/palabra_1"
+        android:inputType="text"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/tvLetraCancion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/etRespuesta2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/palabra_2"
+        android:inputType="text"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/etRespuesta1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/etRespuesta3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/palabra_3"
+        android:inputType="text"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/etRespuesta2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/etRespuesta4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/palabra_4"
+        android:inputType="text"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/etRespuesta3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <!-- Botón para Verificar Respuestas -->
+
+    <!-- Botón para Volver -->
+    <Button
+        android:id="@+id/btnVerificarRespuestas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="@string/verificar_respuestas"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etRespuesta4" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="@string/volver"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnVerificarRespuestas" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".interfaz.MenuProfesorActividad">
+
+    <!-- Botón de Ayuda -->
+    <ImageButton
+        android:id="@+id/btnAyuda"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_help"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/bot_n_de_ayuda" />
+
+    <!-- Botón de Cambio de Lenguaje -->
+    <ImageButton
+        android:id="@+id/btnIdioma"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_manage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAyuda"
+        android:contentDescription="@string/boton_para_cambiar_idioma"
+        android:layout_marginEnd="10dp" />
+
+    <!-- Título: Menú del Profesor -->
+
+    <!-- Botón para Crear Alumnos -->
+    <TextView
+        android:id="@+id/tvTituloProfesor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/men_del_profesor"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAyuda"
+        app:layout_constraintVertical_bias="0.081" />
+
+    <Button
+        android:id="@+id/btnCrearAlumno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/crear_alumno"
+        android:textSize="18sp"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloProfesor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp" />
+
+    <!-- Botón para Crear Grupos -->
+    <Button
+        android:id="@+id/btnCrearGrupo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/crear_grupo"
+        android:textSize="18sp"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnCrearAlumno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Botón para Consultar Puntuaciones -->
+    <Button
+        android:id="@+id/btnConsultarPuntuaciones"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/consultar_puntuaciones"
+        android:textSize="18sp"
+        android:backgroundTint="@color/teal_700"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnCrearGrupo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

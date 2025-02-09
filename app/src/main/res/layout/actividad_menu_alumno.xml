@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".interfaz.MenuAlumnoActividad">
+
+    <!-- Botón de Ayuda -->
+    <ImageButton
+        android:id="@+id/btnAyuda"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_help"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/boton_de_ayuda" />
+
+    <!-- Botón de Cambio de Lenguaje -->
+    <ImageButton
+        android:id="@+id/btnIdioma"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_manage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAyuda"
+        android:contentDescription="@string/boton_para_cambiar_idioma"
+        android:layout_marginEnd="10dp" />
+
+    <!-- Nombre del Alumno -->
+    <TextView
+        android:id="@+id/tvNombreAlumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido, [Alumno]"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/btnAyuda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Botón para Drag & Drop -->
+    <Button
+        android:id="@+id/btnDragAndDrop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/juego_drag_drop"
+        android:textSize="18sp"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/tvNombreAlumno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp" />
+
+    <!-- Botón para Rellenar Huecos -->
+    <Button
+        android:id="@+id/btnRellenarHuecos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/juego_rellenar_huecos"
+        android:textSize="18sp"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnDragAndDrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Botón para Ver Puntuaciones -->
+    <Button
+        android:id="@+id/btnPuntuacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ver_puntuacion"
+        android:textSize="18sp"
+        android:backgroundTint="@color/teal_700"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnRellenarHuecos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

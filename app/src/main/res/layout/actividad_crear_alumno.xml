@@ -5,80 +5,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".interfaz.LoginActividad">
+    tools:context=".interfaz.CrearAlumnoActividad">
 
-    <!-- Título de la pantalla -->
+    <!-- Título: Crear Alumno -->
     <TextView
-        android:id="@+id/tituloLogin"
+        android:id="@+id/tvTituloCrearAlumno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/iniciar_sesion"
-        android:textSize="24sp"
+        android:text="@string/crear_nuevo_alumno"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Campo de texto para el Nombre del Alumno -->
+    <EditText
+        android:id="@+id/etNombreAlumno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre_del_alumno"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloCrearAlumno"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="40dp" />
 
     <!-- Campo de texto para el Usuario -->
     <EditText
-        android:id="@+id/etUsuario"
+        android:id="@+id/etUsuarioAlumno"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/usuario"
         android:inputType="text"
         android:padding="12dp"
         android:background="@android:drawable/edit_text"
-        app:layout_constraintTop_toBottomOf="@id/tituloLogin"
+        app:layout_constraintTop_toBottomOf="@id/etNombreAlumno"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="20dp" />
 
     <!-- Campo de texto para la Contraseña -->
     <EditText
-        android:id="@+id/etContrasena"
+        android:id="@+id/etContrasenaAlumno"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/contrase_a"
         android:inputType="textPassword"
         android:padding="12dp"
         android:background="@android:drawable/edit_text"
-        app:layout_constraintTop_toBottomOf="@id/etUsuario"
+        app:layout_constraintTop_toBottomOf="@id/etUsuarioAlumno"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp" />
 
-    <!-- Botón de Iniciar Sesión -->
-
-    <!-- Botón de Volver -->
-
+    <!-- Botón para Guardar Alumno -->
     <Button
-        android:id="@+id/btnIniciarSesion"
+        android:id="@+id/btnGuardarAlumno"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple_500"
-        android:text="@string/iniciar_sesi_n"
-        android:textColor="@android:color/white"
+        android:text="@string/guardar_alumno"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/etContrasenaAlumno"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etContrasena" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
 
+    <!-- Botón para Volver -->
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="528dp"
         android:backgroundTint="@color/teal_700"
         android:text="@string/volver"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnIniciarSesion"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintTop_toBottomOf="@id/btnGuardarAlumno" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
