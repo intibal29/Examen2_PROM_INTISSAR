@@ -61,6 +61,22 @@
             android:name=".interfaz.profesor.CrearAlumnoActividad"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
+            android:name=".interfaz.profesor.CrearGrupoActividad"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
+            android:name=".interfaz.juegos.ArrastrarSoltarActividad"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
+            android:name=".interfaz.juegos.CompletarCancionActividad"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
+            android:name=".interfaz.puntuacion.PuntuacionActividad"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
 
     </application>
 
