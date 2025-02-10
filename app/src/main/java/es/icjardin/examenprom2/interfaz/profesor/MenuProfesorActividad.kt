@@ -60,14 +60,14 @@ class MenuProfesorActividad : AppCompatActivity() {
         btnConsultarPuntuaciones.setOnClickListener {
             startActivity(Intent(this, PuntuacionActividad::class.java))
         }
-
+/*
         // Acción del botón "Cerrar Sesión"
         btnCerrarSesion.setOnClickListener {
             sesionManager.cerrarSesion()
             startActivity(Intent(this, LoginActividad::class.java))
             finish()
         }
-
+*/
         // Acción del botón "Ayuda"
         btnAyuda.setOnClickListener {
             mostrarMensajeAyuda()
