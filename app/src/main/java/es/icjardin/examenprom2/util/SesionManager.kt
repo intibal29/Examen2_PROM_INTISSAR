@@ -2,7 +2,6 @@ package es.icjardin.examenprom2.util
 
 import android.content.Context
 import android.content.SharedPreferences
-
 class SesionManager(context: Context) {
 
     companion object {
@@ -11,6 +10,7 @@ class SesionManager(context: Context) {
         private const val KEY_NOMBRE_ALUMNO = "nombre_alumno"
         private const val KEY_USUARIO = "usuario"
         private const val KEY_SESION_INICIADA = "sesion_iniciada"
+        private const val KEY_ES_PROFESOR = "es_profesor"  // NUEVA CLAVE
     }
 
     private val sharedPreferences: SharedPreferences =
@@ -18,12 +18,14 @@ class SesionManager(context: Context) {
 
     /**
      * Guarda la sesión del usuario después de iniciar sesión.
+     * Si es un profesor, se guarda sin ID de alumno.
      */
-    fun guardarSesion(idAlumno: Int, nombreAlumno: String) {
+    fun guardarSesion(idAlumno: Int, nombreAlumno: String, esProfesor: Boolean) {
         sharedPreferences.edit().apply {
-            putInt(KEY_ID_ALUMNO, idAlumno)
+            putInt(KEY_ID_ALUMNO, if (esProfesor) -1 else idAlumno)  // -1 si es profesor
             putString(KEY_NOMBRE_ALUMNO, nombreAlumno)
             putBoolean(KEY_SESION_INICIADA, true)
+            putBoolean(KEY_ES_PROFESOR, esProfesor) // Guardamos si es profesor
             apply()
         }
     }
@@ -36,17 +38,17 @@ class SesionManager(context: Context) {
     }
 
     /**
-     * Devuelve el nombre del alumno logueado.
+     * Devuelve si el usuario es un profesor.
      */
-    fun obtenerNombreAlumno(): String {
-        return sharedPreferences.getString(KEY_NOMBRE_ALUMNO, "") ?: ""
+    fun esProfesor(): Boolean {
+        return sharedPreferences.getBoolean(KEY_ES_PROFESOR, false)  // Devuelve `false` si no existe
     }
 
     /**
-     * Devuelve el nombre de usuario logueado.
+     * Devuelve el nombre del usuario logueado.
      */
-    fun obtenerUsuario(): String? {
-        return sharedPreferences.getString(KEY_USUARIO, null)
+    fun obtenerNombreAlumno(): String {
+        return sharedPreferences.getString(KEY_NOMBRE_ALUMNO, "") ?: ""
     }
 
     /**

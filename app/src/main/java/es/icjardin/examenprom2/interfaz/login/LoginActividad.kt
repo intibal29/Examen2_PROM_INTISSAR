@@ -9,7 +9,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import es.icjardin.examenprom2.R
 import es.icjardin.examenprom2.interfaz.alumno.MenuAlumnoActividad
-import es.icjardin.examenprom2.interfaz.profesor.MenuProfesorActividad
 import es.icjardin.examenprom2.util.SesionManager
 
 class LoginActividad : AppCompatActivity() {
@@ -23,6 +22,7 @@ class LoginActividad : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_ExamenProm2)  // Aplicamos el tema antes del setContentView
         setContentView(R.layout.actividad_login)
 
         etUsuario = findViewById(R.id.etUsuario)
@@ -31,9 +31,9 @@ class LoginActividad : AppCompatActivity() {
 
         sesionManager = SesionManager(this)
 
-        // Si ya hay una sesión iniciada, entrar directamente al menú
+        // Si ya hay una sesión iniciada, entrar directamente al menú de alumnos
         if (sesionManager.sesionIniciada()) {
-            entrarAlMenu()
+            entrarAlMenuAlumno()
         }
 
         btnIniciarSesion.setOnClickListener {
@@ -43,20 +43,13 @@ class LoginActividad : AppCompatActivity() {
             if (usuario.isNotEmpty() && contrasena.isNotEmpty()) {
                 loginViewModel.verificarCredenciales(usuario, contrasena) { idAlumno, esValido, esProfesor ->
                     runOnUiThread {
-                        when {
-                            esValido && !esProfesor -> {
-                                // Guardamos la sesión con el ID del alumno y el usuario
-                                sesionManager.guardarSesion(idAlumno, usuario)
-                                startActivity(Intent(this, MenuAlumnoActividad::class.java))
-                            }
-                            esValido && esProfesor -> {
-                                startActivity(Intent(this, MenuProfesorActividad::class.java))
-                            }
-                            else -> {
-                                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
-                            }
+                        if (esValido && !esProfesor) {
+                            // Solo permite alumnos, ignora si es profesor
+                            sesionManager.guardarSesion(idAlumno, usuario, false)
+                            entrarAlMenuAlumno()
+                        } else {
+                            Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
                         }
-                        finish() // Cierra la pantalla de login después de iniciar sesión correctamente
                     }
                 }
             } else {
@@ -66,17 +59,10 @@ class LoginActividad : AppCompatActivity() {
     }
 
     /**
-     * Redirige al menú del alumno o profesor según el usuario logueado.
+     * Redirige solo al menú de alumnos.
      */
-    private fun entrarAlMenu() {
-        val idAlumno = sesionManager.obtenerIdAlumno()
-
-        val intent = if (idAlumno > 0) {
-            Intent(this, MenuAlumnoActividad::class.java)
-        } else {
-            Intent(this, MenuProfesorActividad::class.java)
-        }
-        startActivity(intent)
+    private fun entrarAlMenuAlumno() {
+        startActivity(Intent(this, MenuAlumnoActividad::class.java))
         finish() // Cierra la pantalla de login
     }
 }

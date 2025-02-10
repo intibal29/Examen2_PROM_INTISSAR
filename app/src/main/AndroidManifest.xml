@@ -27,15 +27,37 @@
         <activity
             android:name=".interfaz.PrincipalActividad"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.ExamenProm2"
-            android:configChanges="locale|layoutDirection"
-            android:screenOrientation="portrait">
+            android:theme="@style/Theme.ExamenProm2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Actividad de Login -->
+        <activity
+            android:name=".interfaz.login.LoginActividad"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+
+        <!-- Actividad de Menú Alumno -->
+        <activity
+            android:name=".interfaz.alumno.MenuAlumnoActividad"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+
+        <!-- Actividad de Menú Profesor -->
+        <activity
+            android:name=".interfaz.profesor.MenuProfesorActividad"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+
+        <!-- Actividad de Configuración -->
+        <activity
+            android:name=".interfaz.configuracion.ConfiguracionActividad"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+
     </application>
 
 </manifest>
